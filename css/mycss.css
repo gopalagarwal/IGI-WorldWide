@@ -1,0 +1,42 @@
+body{
+  background-color: ;
+  background-image: url('../imgs/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center ;
+  background-size:  1370px, 1200px; 
+}
+.header h1 {
+  position: relative;
+  top: 20px;
+  left: 10px;
+  color: white;
+}
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+.button {
+  float: right;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 60px 4px 4px;
+  cursor: pointer;
+}
+.container-fluid  {
+  padding: 50px;
+  color: white;
+  
+}
+body a:hover {
+    background-color: #4CAF40;
+    text-decoration: none;
+    color: white;
+}

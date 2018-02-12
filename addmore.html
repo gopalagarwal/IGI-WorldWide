@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IGI World Wide</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
+</head>
+<body>
+    <div class="header">
+        <img src="imgs/logo.png" alt="logo"/>
+        <h1>IGI World Wide</h1>
+    </div>
+    <div class="container-fluid">
+        <form class="form-horizontal" action='scraper.py "%1" %*'>
+            <div class="form-group">
+                <label class="control-label col-md-2">Add More Data:</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="addDataRangeFrom" placeholder="234567896">
+                </div>
+                <div class="col-md-1" style="text-align: center"><label class="control-label">------</label></div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="addDataRangeTo" placeholder="234567896">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+
+
+    <div>
+        <center><a href="index.html" class="btn btn-success" role="button">Back</a></center>
+    </div>
+
+</body>
+</html>

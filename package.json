@@ -1,0 +1,25 @@
+{
+  "name": "IGI-WorldWide",
+  "productName": "IGI-WorldWide",
+  "version": "1.0.1",
+  "description": "IGI WorldWide Application",
+  "main": "main.js",
+  "dependencies": {
+    "bootstrap-select": "^1.12.4",
+    "mysql": "^2.15.0",
+    "pretty-bytes": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gopalagarwal/IGI-WorldWide"
+  },
+  "devDependencies": {
+    "electron-packager": "^11.0.0",
+    "electron-prebuilt": "^0.35.2"
+  },
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Gopal Agarwal",
+  "license": "ISC"
+}

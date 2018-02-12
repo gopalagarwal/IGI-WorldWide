@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IGI World Wide</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <style>
+    input[type=text] {
+        width: 400px;
+        float: left;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        font-size: 16px;
+        background-color: #eee;
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 2px 20px 2px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    input[type=text]:focus {
+        width: 100%;
+        background-color: #ddd;
+    }
+    body{
+        background-image: url('imgs/images.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center ;
+        background-size: 1370px, 1200px; 
+        }
+    tbody, thead{
+        color: white;
+    }    
+    label{
+        color: black;
+    }
+
+  </style>
+</head>
+<body>
+
+    <table border="1" style="width: 80%;  margin: 0 auto 2em auto;">
+        <thead>
+            <tr>
+                <th>Target</th>
+                <th>Search text</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="filter_global">
+                <td>Global search</td>
+                <td align="center"><input type="text" class="global_filter" id="global_filter" placeholder="Global search"></td>
+                <input type="hidden" class="global_filter" id="global_regex" checked="checked">
+                <input type="hidden" class="global_filter" id="global_smart" checked="checked">
+            </tr>
+            <tr id="filter_col1" data-column="0">
+                <td>Column - Report Number</td>
+                <td align="center"><input type="text" class="column_filter" id="col0_filter" placeholder="Report Number"></td>
+                <input type="hidden" class="column_filter" id="col0_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col0_smart" checked="checked">
+            </tr>
+            <tr id="filter_col2" data-column="1">
+                <td>Column - Shape & cut</td>
+                <td align="center"><input type="text" class="column_filter" id="col1_filter" placeholder="Shape & cut"></td>
+                <input type="hidden" class="column_filter" id="col1_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col1_smart" checked="checked">
+            </tr>
+            <tr id="filter_col3" data-column="2">
+                <td>Column - Polish</td>
+                <td align="center"><input type="text" class="column_filter" id="col2_filter" placeholder="Polish"></td>
+                <input type="hidden" class="column_filter" id="col2_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col2_smart" checked="checked">
+            </tr>
+            <tr id="filter_col4" data-column="3">
+                <td>Column - Carat Weight</td>
+                <td align="center"><input type="text" class="column_filter" id="col3_filter" placeholder="Carat Weight"></td>
+                <input type="hidden" class="column_filter" id="col3_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col3_smart" checked="checked">
+            </tr>
+            <tr id="filter_col5" data-column="4">
+                <td>Column - Symmetry</td>
+                <td align="center"><input type="text" class="column_filter" id="col4_filter" placeholder="Symmetry"></td>
+                <input type="hidden" class="column_filter" id="col4_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col4_smart" checked="checked">
+            </tr>
+            <tr id="filter_col6" data-column="5">
+                <td>Column - Color grade</td>
+                <td align="center"><input type="text" class="column_filter" id="col5_filter" placeholder="Color grade"></td>
+                <input type="hidden" class="column_filter" id="col5_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col5_smart" checked="checked">
+            </tr>
+            <tr id="filter_col7" data-column="6">
+                <td>Column - Measurements</td>
+                <td align="center"><input type="text" class="column_filter" id="col6_filter" placeholder="Measurements"></td>
+                <input type="hidden" class="column_filter" id="col6_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col6_smart" checked="checked">
+            </tr>
+            <tr id="filter_col8" data-column="7">
+                <td>Column - Clarity Grade</td>
+                <td align="center"><input type="text" class="column_filter" id="col7_filter" placeholder="Clarity Grade"></td>
+                <input type="hidden" class="column_filter" id="col7_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col7_smart" checked="checked">
+            </tr>
+            <tr id="filter_col9" data-column="8">
+                <td>Column - Table Size</td>
+                <td align="center"><input type="text" class="column_filter" id="col8_filter" placeholder="Table Size"></td>
+                <input type="hidden" class="column_filter" id="col8_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col8_smart" checked="checked">
+            </tr>
+            <tr id="filter_col10" data-column="9">
+                <td>Column - Cut Grade</td>
+                <td align="center"><input type="text" class="column_filter" id="col9_filter" placeholder="Cut Grade"></td>
+                <input type="hidden" class="column_filter" id="col9_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col9_smart" checked="checked">
+            </tr>
+            <tr id="filter_col11" data-column="10">
+                <td>Column - Chrown Height Angle</td>
+                <td align="center"><input type="text" class="column_filter" id="col10_filter" placeholder="Chrown Height Angle"></td>
+                <input type="hidden" class="column_filter" id="col10_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col10_smart" checked="checked">
+            </tr>
+
+            <tr id="filter_col12" data-column="11">
+                <td>Column - Gridle Thickness</td>
+                <td align="center"><input type="text" class="column_filter" id="col11_filter" placeholder="Gridle Thickness"></td>
+                <input type="hidden" class="column_filter" id="col11_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col11_smart" checked="checked">
+            </tr>
+
+            <tr id="filter_col13" data-column="12">
+                <td>Column - Pavilion Depth Angle</td>
+                <td align="center"><input type="text" class="column_filter" id="col12_filter" placeholder="Pavilion Depth Angle"></td>
+                <input type="hidden" class="column_filter" id="col12_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col12_smart" checked="checked">
+            </tr>
+            <tr id="filter_col14" data-column="13">
+                <td>Column - Flourecence</td>
+                <td align="center"><input type="text" class="column_filter" id="col13_filter" placeholder="Flourecence"></td>
+                <input type="hidden" class="column_filter" id="col13_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col13_smart" checked="checked">
+            </tr>
+            <tr id="filter_col15" data-column="14">
+                <td>Column - Total Depth</td>
+                <td align="center"><input type="text" class="column_filter" id="col14_filter" placeholder="Total depth"></td>
+                <input type="hidden" class="column_filter" id="col14_regex" checked="checked">
+                <input type="hidden" class="column_filter" id="col14_smart" checked="checked">
+            </tr>
+        </tbody>
+    </table>
+    <table id="example" class="display" cellspacing="0" border="1" width="100%">
+        <thead>
+            <tr>    
+                <th>Report No.</th>
+                <th>Shape & Cut</th>
+                <th>Polish</th>
+                <th>Carat Weight</th>
+                <th>Symmetry</th>
+                <th>Color Grade</th>
+                <th>Measurements</th>
+                <th>Clarity Grade</th>
+                <th>Table Size</th>
+                <th>Cut Grade</th>
+                <th>Chrown height</th>
+                <th>Gridle Thickness</th>
+                <th>Pavilion Depth</th>
+                <th>Flourecence</th>
+                <th>Total depth</th>
+            </tr>
+        </thead>
+        <tbody style="color: #000">
+            
+        </tbody>
+    </table>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/myscript.js"></script>
+    <script>
+        var mysql = require('mysql');
+
+            // Add the credentials to access your database
+            var con = mysql.createConnection({
+                host     : 'localhost',
+                user     : 'root',
+                password : null,
+                database : 'diamond_db'
+            });
+
+            $query = 'SELECT `report_number`, `shape_and_cut`, `polish`, `carat_weight`, `symmetry`, `color_grade`, `measurements`, `clarity_grade`, `table_size`, `cut_grade`, `crown_height_angle`, `girdle_thickness`, `pavilion_depth_angle`, `fluorescence`, `total_depth` FROM `diamonds` ';
+
+            con.connect(function(err) {
+              if (err) throw err;
+
+              con.query($query, function (err, rows, fields) {
+                  if (err) throw err;
+
+                  rows.forEach(callrows);
+                  
+              });
+          },false);
+
+            var t = $('#example').DataTable();
+
+            function callrows(element){  
+                
+                t.row.add( [
+                    element.report_number,
+                    element.shape_and_cut,
+                    element.polish,
+                    element.carat_weight,
+                    element.symmetry,
+                    element.color_grade,
+                    element.measurements,
+                    element.clarity_grade,
+                    element.table_size,
+                    element.cut_grade,
+                    element.crown_height_angle,
+                    element.girdle_thickness,
+                    element.pavilion_depth_angle,
+                    element.fluorescence,
+                    element.total_depth
+
+                    ] ).draw( false );
+                
+            }
+
+        </script>
+        <script> if(window.module) module = window.module;</script>
+        <div>
+            <center><a href="index.html" class="btn btn-success" role="button">Back</a></center>
+        </div>
+    </body>
+    </html>
+    
